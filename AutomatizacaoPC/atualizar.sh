@@ -36,9 +36,21 @@ echo "--------------------------------------------------------------------------
 
 # INICIAR ENTRADA DE DADOS (INPUT)
 
-#echo "Você deseja reinicar o computador?"
+echo "Digite (r) para reinicar o computador, (p) para desligar ou (n) para encerrar o programa aqui!!"
+ 
+read ENTRADA
 
-#read ENTRADA
+if [-z $ENTRADA]; then #Verifica se entrada doo usuário é uma string zerada
+        echo  
+if [$ENTRADA -eq "r" || $ENTRADA -eq "R"]; then
+        echo "reboot executado"
+if [$ENTRADA -eq "p" || $ENTRADA -eq "P"]; then
+	echo "shutdown -h now executado"
+if [$ENTRADA -eq "n" || $ENTRADA -eq "N"]; then
+	echo "BYE BYE"
+	echo "Programa encerrado"
+else    
+	echo "Não reconheci sua opção, digite algo válido por favor"
+fi
 
-#echo "$ENTRADA"  
 
